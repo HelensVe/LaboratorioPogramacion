@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MochiStore - Tienda de Mochilas</title>
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="./assets/img/logos/logo.png" alt="MochiStore">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pages/productos.html">Productos</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
+                <li><a href="pages/login.html" class="btn-login">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Las mejores mochilas para tus aventuras</h1>
+            <p>Calidad, diseño y comodidad en un solo lugar</p>
+            <a href="pages/productos.html" class="btn-primary">Ver Colección</a>
+        </section>
+
+        <section class="featured-products">
+            <h2>Productos Destacados</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Productos cargados dinámicamente con JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MochiStore</h3>
+                <p>Tienda especializada en mochilas de alta calidad para todos los estilos de vida.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@mochistore.com</p>
+                <p>+54 11 1234-5678</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 MochiStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js\main.js"></script>
+</body>
+</html>

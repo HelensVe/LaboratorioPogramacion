@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - MochiStore</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+    <link rel="icon" href="assets/css/images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/css/images/logo.png" alt="MochiStore Logo" class="logo">
+            <h1>MochiStore <span class="emoji">🎒</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="shop.html">Productos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="cart.html" class="cart-link">Carrito <span id="cart-count">0</span> 🛒</a></li>
+                <li><a href="admin/index.html" class="admin-link">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-main">
+        <div class="checkout-container">
+            <h1>Finalizar tu Compra <span class="emoji">💳</span></h1>
+            
+            <div class="checkout-steps">
+                <div class="step active">1. Información</div>
+                <div class="step">2. Envío</div>
+                <div class="step">3. Pago</div>
+                <div class="step">4. Confirmación</div>
+            </div>
+            
+            <div class="checkout-content">
+                <form id="checkout-form" class="checkout-form">
+                    <section class="checkout-section active" id="information-section">
+                        <h2>Información Personal <span class="emoji">👤</span></h2>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="first-name">Nombre</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Apellido</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-next" data-next="shipping-section">Siguiente</button>
+                        </div>
+                    </section>
+                    
+                    <section class="checkout-section" id="shipping-section">
+                        <h2>Datos de Envío <span class="emoji">🚚</span></h2>
+                        
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">Provincia</label>
+                                <input type="text" id="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Código Postal</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">País</label>
+                                <select id="country" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="MX">México</option>
+                                    <option value="ES">España</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="CL">Chile</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-methods">
+                            <h3>Método de Envío <span class="emoji">📦</span></h3>
+                            <div class="method-option">
+                                <input type="radio" id="standard-shipping" name="shipping-method" value="standard" checked>
+                                <label for="standard-shipping">
+                                    <span class="method-name">Envío Estándar</span>
+                                    <span class="method-price">$5.99</span>
+                                    <span class="method-duration">3-5 días hábiles</span>
+                                </label>
+                            </div>
+                            <div class="method-option">
+                                <input type="radio" id="express-shipping" name="shipping-method" value="express">
+                                <label for="express-shipping">
+                                    <span class="method-name">Envío Express</span>
+                                    <span class="method-price">$12.99</span>
+                                    <span class="method-duration">1-2 días hábiles</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-prev" data-prev="information-section">Anterior</button>
+                            <button type="button" class="btn btn-next" data-next="payment-section">Siguiente</button>
+                        </div>
+                    </section>
+                    
+                    <section class="checkout-section" id="payment-section">
+                        <h2>Método de Pago <span class="emoji">💲</span></h2>
+                        
+                        <div class="payment-methods">
+                            <div class="method-option">
+                                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                <label for="credit-card">
+                                    <span class="method-name">Tarjeta de Crédito/Débito</span>
+                                    <span class="method-icon">💳</span>
+                                </label>
+                                
+                                <div class="payment-details" id="credit-card-details">
+                                    <div class="form-group">
+                                        <label for="card-number">Número de Tarjeta</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                                    </div>
+                                    
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="card-name">Nombre en la Tarjeta</label>
+                                            <input type="text" id="card-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-expiry">Fecha de Expiración</label>
+                                            <input type="text" id="card-expiry" placeholder="MM/AA">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-cvv">CVV</label>
+                                            <input type="text" id="card-cvv" placeholder="123">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="method-option">
+                                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                                <label for="paypal">
+                                    <span class="method-name">PayPal</span>
+                                    <span class="method-icon">🔵</span>
+                                </label>
+                            </div>
+                            
+                            <div class="method-option">
+                                <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                                <label for="bank-transfer">
+                                    <span class="method-name">Transferencia Bancaria</span>
+                                    <span class="method-icon">🏦</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <h3>Resumen de tu Pedido <span class="emoji">📋</span></h3>
+                            <div class="summary-items" id="checkout-items">
+                                <!-- Los items del carrito se cargarán aquí -->
+                            </div>
+                            <div class="summary-totals">
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="checkout-subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Envío:</span>
+                                    <span id="checkout-shipping">$0.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total:</span>
+                                    <span id="checkout-total">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-prev" data-prev="shipping-section">Anterior</button>
+                            <button type="submit" class="btn btn-confirm">Confirmar Pedido</button>
+                        </div>
+                    </section>
+                    
+                    <section class="checkout-section" id="confirmation-section">
+                        <div class="confirmation-message">
+                            <div class="confirmation-icon">🎉</div>
+                            <h2>¡Gracias por tu compra! <span class="emoji">❤️</span></h2>
+                            <p>Tu pedido ha sido procesado exitosamente. Hemos enviado un correo de confirmación a <span id="confirmation-email">tu@email.com</span>.</p>
+                            <p class="order-number">Número de pedido: <strong>#MOCHI-<span id="order-id">12345</span></strong></p>
+                            
+                            <div class="confirmation-actions">
+                                <a href="shop.html" class="btn">Seguir Comprando</a>
+                                <a href="index.html" class="btn btn-outline">Volver al Inicio</a>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MochiStore <span class="emoji">🎒</span></h3>
+                <p>Tu destino para mochilas minimalistas y funcionales.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="#">Políticas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@mochistore.com</p>
+                <p>+543794795852</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MochiStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

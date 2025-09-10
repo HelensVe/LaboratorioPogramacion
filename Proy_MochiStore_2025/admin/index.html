@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MochiStore Admin</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>MochiStore <span class="emoji">🎒</span></h2>
+                <p>Panel de Administración</p>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li class="active"><a href="index.html">Dashboard</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="orders.html">Pedidos</a></li>
+                    <li><a href="../index.html">Volver a la tienda</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Dashboard</h1>
+                <div class="admin-user">
+                    <span>👤 Admin</span>
+                    <button id="logout-btn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <section class="admin-stats">
+                <div class="stat-card">
+                    <h3>Ventas Hoy</h3>
+                    <p>$1,245.00</p>
+                    <span class="stat-trend up">↑ 12%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Pedidos Nuevos</h3>
+                    <p>8</p>
+                    <span class="stat-trend up">↑ 5%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Productos</h3>
+                    <p>24</p>
+                    <span class="stat-trend down">↓ 2%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Clientes</h3>
+                    <p>143</p>
+                    <span class="stat-trend up">↑ 8%</span>
+                </div>
+            </section>
+
+            <section class="admin-recent">
+                <h2>Pedidos Recientes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1001</td>
+                            <td>Juan Pérez</td>
+                            <td>2023-06-15</td>
+                            <td>$189.98</td>
+                            <td><span class="status shipped">Enviado</span></td>
+                            <td><button class="action-btn">Ver</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1000</td>
+                            <td>María Gómez</td>
+                            <td>2023-06-14</td>
+                            <td>$79.99</td>
+                            <td><span class="status delivered">Entregado</span></td>
+                            <td><button class="action-btn">Ver</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
