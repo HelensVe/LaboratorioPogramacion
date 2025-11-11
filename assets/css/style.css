@@ -1,0 +1,402 @@
+/* ========================================================== */
+/* === ESTILO BASE MOTORKAI (REDEFINIDO: DARK & RED-ORANGE) === */
+/* ========================================================== */
+
+/* COLORES PRINCIPALES:
+   - Fondo: #0F0F0F (Negro profundo)
+   - Texto: #EAEAEA (Gris claro)
+   - Acento Principal: #FF4500 (Naranja-Rojo Intenso)
+   - Acento Hover/Sombra: #FF7F50 (Coral brillante)
+*/
+
+body {
+  background: #0F0F0F; /* Fondo oscuro y sobrio */
+  color: #EAEAEA;
+  font-family: "Segoe UI", Roboto, Arial;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background-color: #FF4500 !important; /* Acento en la barra de navegación */
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  color: #0F0F0F !important; /* Texto oscuro sobre acento */
+}
+
+.navbar-brand {
+  color: #0F0F0F !important;
+  font-weight: 700;
+}
+
+/* === TARJETAS === */
+.card-motorkai {
+  background: #1A1A1A; /* Gris muy oscuro para destacar sobre el body */
+  /* Borde de la tarjeta: Asegurado en tonos naranja/rojo */
+  border: 1px solid rgba(255, 69, 0, 0.4); /* Naranja-Rojo semi-transparente */
+  box-shadow: 0 8px 24px rgba(255, 69, 0, 0.15); /* Sombra con el acento */
+  color: #EAEAEA;
+}
+
+/* === BOTONES (Llamadas a la Acción) === */
+.btn-motorkai {
+  background: #FF4500; /* Acento Principal */
+  color: #0F0F0F; /* Texto oscuro para alto contraste */
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-motorkai:hover {
+  background: #E53A00; /* Un poco más oscuro para el hover */
+  color: #EAEAEA;
+  box-shadow: 0 0 15px #FF7F50; /* Sombra con el color de acento más suave */
+  transform: translateY(-2px);
+}
+
+/* === TABLAS === */
+.table thead th {
+  background: #1A1A1A;
+  color: #EAEAEA;
+  border-bottom: 2px solid #333;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  background-color: #2C2C2C; /* Tono de gris medio para el cuerpo de la tabla */
+  color: #EAEAEA;
+}
+.table tbody tr:hover td {
+    background-color: #383838; /* Resalta al pasar el ratón */
+}
+
+/* === FORMULARIOS === */
+.form-control,
+.form-select {
+  background: #1A1A1A;
+  color: #EAEAEA;
+  border: 1px solid #444;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #FF7F50;
+    box-shadow: 0 0 0 0.25rem rgba(255, 69, 0, 0.25);
+    background-color: #0F0F0F;
+    color: #EAEAEA;
+}
+
+/* === RESPONSIVIDAD === */
+@media (max-width: 767px) {
+  .cards-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+.table-dark .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ========================================================== */
+/* === LISTADO DE MARCAS Y CATEGORÍAS (list.php) === */
+/* ========================================================== */
+.container {
+  margin: 2rem auto;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+  background-color: transparent; /* Dejamos que el fondo del body se encargue */
+  flex: 1; /* Permite que el contenido empuje el footer */
+}
+
+/* Si el título MOTORKAI usa la etiqueta H1, esto lo pone en naranja */
+h1 {
+  color: #FF4500; /* Acento principal */
+  /* Sombreado de neón eliminado para un aspecto más sobrio */
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.botones-superiores {
+  margin-bottom: 1.5rem;
+}
+
+/* Botones principales */
+.btn-nueva,
+.btn-volver {
+  display: inline-block;
+  background-color: #FF4500;
+  color: #0F0F0F;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(255, 127, 80, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-nueva:hover,
+.btn-volver:hover {
+  background-color: #E53A00;
+  box-shadow: 0 0 20px #FF7F50, 0 0 40px rgba(255, 127, 80, 0.4);
+  transform: scale(1.05);
+}
+
+/* Tabla personalizada */
+table.tabla-marcas,
+table.tabla-categorias {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: #1A1A1A;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+  animation: fadeInUp 0.9s ease-out;
+}
+
+table.tabla-marcas th,
+table.tabla-categorias th {
+  background-color: #FF4500;
+  color: #0F0F0F;
+  font-weight: bold;
+}
+
+table.tabla-marcas th,
+table.tabla-marcas td,
+table.tabla-categorias th,
+table.tabla-categorias td {
+  padding: 12px;
+  border-bottom: 1px solid #FF4500; /* Línea separadora con acento */
+  text-align: center;
+}
+
+
+
+table.tabla-marcas tr:hover,
+table.tabla-categorias tr:hover {
+  background-color: #1F1F1F;
+}
+
+/* Acciones de edición y eliminación */
+a.btn-editar {
+  color: #FF4500; /* Acento para editar */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s; /* Transición sobria */
+}
+
+a.btn-eliminar {
+  color: #FF5555; /* Mantenemos el rojo de alerta para eliminar */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s; /* Transición sobria */
+}
+
+a.btn-editar:hover {
+  color: #FF7F50; /* Color más brillante en hover, sin sombra */
+}
+
+a.btn-eliminar:hover {
+  color: #FF8888; /* Rojo más claro en hover, sin sombra */
+}
+
+/* ========================================================== */
+/* === FORMULARIOS CREATE / EDIT === */
+/* ========================================================== */
+.form-motorkai {
+  width: 90%; /* Ajustado para mejor responsividad */
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #1A1A1A;
+  /* Borde del formulario: Asegurado en tonos naranja/rojo */
+  border: 1px solid rgba(255, 69, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+  animation: fadeIn 0.9s ease-out;
+}
+
+.form-motorkai label {
+  display: block;
+  text-align: left;
+  color: #FF4500; /* Acento para la etiqueta */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-motorkai input[type="text"],
+.form-motorkai textarea,
+.form-motorkai input[type="email"],
+.form-motorkai input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #FF4500;
+  border-radius: 6px;
+  background-color: #0F0F0F; /* Fondo de campo más oscuro */
+  color: #EAEAEA;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+.form-motorkai input[type="text"]:focus,
+.form-motorkai textarea:focus,
+.form-motorkai input[type="email"]:focus,
+.form-motorkai input[type="password"]:focus {
+  box-shadow: 0 0 10px #FF7F50;
+  outline: none;
+  border-color: #FF7F50;
+}
+
+/* Botones dentro de los formularios */
+.form-motorkai button {
+  background-color: #FF4500;
+  color: #0F0F0F;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-motorkai button:hover {
+  background-color: #E53A00;
+  box-shadow: 0 0 20px #FF7F50, 0 0 40px rgba(255, 127, 80, 0.4);
+}
+
+/* ========================================================== */
+/* === ANIMACIONES (Se mantienen) === */
+/* ========================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === FOOTER: Estilo oscuro y acentos rojos === */
+
+body {
+  background-color: #0F0F0F; /* Fondo general consistente */
+  background-image: none;
+}
+
+/* Footer container (full width) */
+.mk-footer {
+  width: 100%;
+  background: linear-gradient(180deg, #1A1A1A 0%, #151515 100%); /* Tonos oscuros de gris */
+  color: #d8d8d8;
+  padding: 34px 0 12px;
+  box-shadow: inset 0 10px 40px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 69, 0, 0.1);
+}
+
+/* Inner centered content */
+.mk-footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display:flex;
+  gap: 30px;
+  align-items:flex-start;
+  padding: 0 20px;
+  flex-wrap:wrap;
+}
+
+/* Logo block */
+.mk-brand { flex: 0 0 auto; }
+.mk-logo { width: 140px; height: auto; display:block; }
+
+/* Links column */
+.mk-links{
+  border-left:4px solid #FF4500; /* Línea de acento Rojo-Naranja */
+  padding-left:18px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  flex:1 1 320px;
+}
+.mk-links a{
+  color: #EAEAEA;
+  text-decoration:none;
+  transition: color .15s ease, transform .06s;
+}
+.mk-links a:hover{ color:#FF7F50; transform: translateX(4px); }
+
+/* Contact + social (right) */
+.mk-contact{ margin-left:auto; text-align:right; min-width:220px; flex:0 0 320px; }
+.mk-contact p{ margin:0 0 8px 0; font-weight:500; }
+.mk-social { display:flex; justify-content:flex-end; gap:10px; margin-top:6px; }
+.mk-social-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px; height:44px;
+  border-radius:8px;
+  background: rgba(0,0,0,0.12);
+  text-decoration:none;
+  font-size:18px;
+  color:#d8d8d8;
+  transition: transform .12s ease, background .12s, color .12s;
+}
+.mk-social-link:hover{ transform: translateY(-3px); background:linear-gradient(180deg,#1f1f1f,#101010); color:#FF4500; } /* Acento en hover */
+
+/* Bottom bar */
+.mk-footer-bottom{
+  margin-top:18px;
+  background: rgba(0,0,0,0.12);
+  padding:10px 0;
+}
+.mk-footer-bottom-inner{
+  max-width:1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  color:#d8d8d8;
+  font-size:14px;
+}
+.mk-credit{ opacity:0.85; font-style:italic; }
+
+/* Responsive */
+@media(max-width:900px){
+  .mk-footer-inner{ flex-direction:column; align-items:center; text-align:center; gap:14px; }
+  .mk-contact{ text-align:center; margin-left:0; }
+  .mk-links{ border-left:none; padding-left:0; align-items:center; }
+  .mk-footer-bottom-inner{ flex-direction:column; gap:8px; text-align:center; }
+}
+
+/* Fixes para evitar cortes visuales: */
+.container, .main-container {
+  background: transparent;
+}
